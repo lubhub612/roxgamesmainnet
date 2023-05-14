@@ -1,0 +1,836 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lightgallery.css');
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lg-zoom.css');
+@import url('https://cdn.jsdelivr.net/npm/lightgallery@2.4.0/css/lg-video.css');
+
+/* // If you want you can use SCSS instead of css */
+
+:root {
+  /* Your default theme */
+  --background: #ffffff;
+  --colorWhite: #000000;
+  --titleColor: #000000;
+  --footerGradient: linear-gradient(180deg, rgb(249 249 249), #e0e0e0);
+  --hoverBg: #bbbbbb33;
+  --hoverShadow: 0 4px 8px rgba(0, 0, 0, 0.23);
+  --videoBg: linear-gradient(
+    180deg,
+    rgba(34, 38, 45, 1) 0%,
+    rgba(72, 81, 97, 1) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  --heroGradient: linear-gradient(
+    180deg,
+    rgb(23 22 29 / 90%),
+    rgba(31, 28, 58, 0.9) 10%,
+    transparent 40%,
+    rgb(19 24 28 / 23%) 70%,
+    #21262d 90%
+  );
+  --headerBg: #ffffff;
+  --headerBorderColor: #ededed;
+  --eventMenu: #ededed;
+  --borderColor: #f7f7f7;
+  --eventButtonBg: #f0f0f0;
+  --eventButtonColor: #000000;
+  --racesTableHover: #f8f8f8;
+  --racesButton: #f1f1f1;
+  --studListBg: #f8f8f8;
+  --studListHover: #ececec;
+  --studListBorder: #ffffff;
+  --bigCtaBg: #f0f0f0;
+  --darkstillblack: #f8f8f8;
+  --rosterBgHover: #ececec;
+  --resultBtnBg: #ffffffdb;
+  --resultBtnImg: invert(1);
+  --raceViewBg: #ffffff;
+  --dropdown: #ffffff;
+  --dropdownHover: #eaeaea;
+  --stackBg: #e3e3e3;
+  --footerBg: #f0f0f0;
+  --settingItemBg: #f1f1f1;
+  --swapBtnBg: #00000017;
+  --boostBorder: #d5d5d5;
+  --profileInputBg: #ffffff;
+  --profileInputBorder: #09090952;
+  --copygary: #858585;
+  --horseColor: #000;
+  --BgHorse: #f1f1f1;
+}
+
+[data-theme='dark'] {
+  --background: #14181d;
+  --colorWhite: #ffffff;
+  --titleColor: #f0f8ff5e;
+  --footerGradient: linear-gradient(180deg, rgb(34 38 46), #191d23);
+  --hoverBg: #373a42;
+  --hoverShadow: 0 4px 18px rgb(0 0 0 / 24%);
+  --videoBg: #14181d;
+  --headerBg: #14181d;
+  --headerBorderColor: #14181d;
+  --eventMenu: #283544;
+  --borderColor: #2a2f35;
+  --eventButtonBg: #656a71;
+  --eventButtonColor: #b6bfc5;
+  --racesTableHover: linear-gradient(
+    to right,
+    rgb(27, 32, 37),
+    rgb(39, 44, 49),
+    rgb(27, 32, 37)
+  );
+  --heroGradient: linear-gradient(
+    180deg,
+    rgb(23 22 29 / 90%),
+    rgba(31, 28, 58, 0.9) 10%,
+    transparent 40%,
+    rgb(19 24 28 / 23%) 70%,
+    #14181d 90%
+  );
+  --racesButton: #3f444a;
+  --studListBg: #2a2e35;
+  --studListBorder: #1f2128;
+  --studListHover: #34363a;
+  --bigCtaBg: linear-gradient(180deg, #22262d, #252932);
+  --darkstillblack: rgb(22, 22, 32);
+  --rosterBgHover: #3b3f47;
+  --resultBtnBg: #2a2e35ba;
+  --resultBtnImg: invert(0);
+  --raceViewBg: linear-gradient(180deg, #282620, #1c1c19 50%);
+  --dropdown: #2a2a2a;
+  --dropdownHover: #ffffff26;
+  --stackBg: #1f222a;
+  --footerBg: #1d1e22;
+  --settingItemBg: #282c39;
+  --swapBtnBg: #ffffff14;
+  --boostBorder: #3d3f46;
+  --profileInputBg: #31373d;
+  --profileInputBorder: #f0f8ff52;
+  --copygary: #fff;
+  --horseColor: #fff;
+  --BgHorse: #282c38;
+}
+html {
+  overflow-x: hidden;
+}
+html,
+body,
+#__next {
+  height: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  background: var(--background);
+  color: var(--colorWhite);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+button {
+  transition: 0.3s;
+}
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 20px;
+}
+.slick-slide > div {
+  margin: 0 5px !important;
+}
+.slick-list {
+  margin: 0 -5px !important;
+}
+.info-page {
+  padding: 60px 0;
+}
+
+.info_main .thumbnail_main {
+  display: flex;
+}
+
+.info_main .thumbnail_main {
+  flex-wrap: wrap;
+}
+
+.info_main .thumbnail_main .image {
+  width: calc(20% - 5px);
+  margin: 0 5px 5px 0;
+  height: calc(200px - 5px);
+  position: relative;
+  transition: 0.3s;
+  overflow: hidden;
+}
+.thumbnail_main .image img {
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
+  transition: 0.5s ease;
+}
+
+.blackbg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.search {
+  position: absolute;
+  color: #fff;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.main_image:hover .search {
+  opacity: 1;
+  transition: 0.5s all;
+}
+
+.image_main .react_lightgallery_item {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.image_main .react_lightgallery_item::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  transition: 0.5s ease-in-out;
+}
+
+.image_main .react_lightgallery_item:hover::before {
+  opacity: 0.4;
+}
+.image_main .react_lightgallery_item img {
+  height: 100%;
+  transform: scale(1);
+  transition: 0.5s all;
+  object-fit: cover;
+}
+.image_main .react_lightgallery_item:hover img {
+  transform: scale(1.2);
+}
+
+.image_main {
+  flex-wrap: wrap;
+}
+.main_image {
+  width: calc(20% - 5px) !important;
+  position: relative;
+}
+.sub_image {
+  width: 100%;
+}
+.sub_image > div {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.info-page h1 {
+  text-align: center;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  font-size: 50px;
+}
+.info-page h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.info-page p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.genesis-tab .react-tabs__tab-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  text-align: center;
+  padding-bottom: 100px;
+}
+.genesis-tab .react-tabs__tab--selected .horse-tab-menu {
+  border: 1px solid #f0b90c;
+  /* background: #f0b90c0f; */
+}
+.react-tabs__tab--selected {
+  outline: none;
+}
+.react-switch-handle {
+  border: 1px solid #ededed !important;
+}
+.pro-sidebar > .pro-sidebar-inner {
+  background: var(--background) !important;
+}
+.pro-sidebar .pro-menu > ul > .pro-sub-menu > .pro-inner-list-item {
+  background: var(--eventMenu) !important;
+}
+.pro-sidebar .pro-menu a,
+.pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item > .pro-item-content {
+  color: var(--colorWhite) !important;
+}
+.accordion__button {
+  position: relative;
+}
+.accordion__button:before {
+  position: absolute;
+  right: 10px;
+  top: 42%;
+}
+.accordion__button {
+  background: var(--bigCtaBg) !important;
+  color: var(--colorWhite) !important;
+  margin-bottom: 20px !important;
+}
+.accordion__item:last-child .accordion__button {
+  margin-bottom: 0 !important;
+}
+.react-switch-bg > div {
+  padding-left: 6px !important;
+  padding-top: 8px !important;
+  font-weight: 500 !important;
+  font-size: 13px !important;
+  color: #fff;
+}
+.rangeslider .rangeslider__handle {
+  background: #eab508 !important;
+  border: 1px solid #eab508 !important;
+  box-shadow: none !important;
+}
+.rangeslider-horizontal .rangeslider__handle:after {
+  background-color: #eab508 !important;
+  box-shadow: none !important;
+}
+.rangeslider-horizontal {
+  height: 6px !important;
+}
+.rangeslider {
+  background: #eab5072b !important;
+}
+.rangeslider-horizontal .rangeslider__fill {
+  background-color: #eab507 !important;
+}
+.rangeslider,
+.rangeslider .rangeslider__fill {
+  box-shadow: none !important;
+}
+
+/* The container */
+.custom-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid #edb709;
+}
+/* When the checkbox is checked, add a blue background */
+.custom-checkbox input:checked ~ .checkmark {
+  background-color: #edb709;
+  border: 2px solid #edb709;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.custom-checkbox .checkmark:after {
+  left: 4px;
+  top: 0px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+.nft-listing-split-sidebar .accordion__button {
+  padding: 0px;
+  background: transparent !important;
+}
+
+.nft-listing-split-sidebar .accordion__button:before {
+  top: 5px;
+  right: -8px;
+}
+.nft-listing-split-sidebar .accordion {
+  border: none;
+}
+.nft-listing-split-sidebar .accordion__button:before {
+  height: 8px;
+  width: 8px;
+  border-bottom: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+}
+.nft-listing-split-sidebar .accordion__button[aria-expanded='true']::before,
+.nft-listing-split-sidebar .accordion__button[aria-selected='true']::before {
+  top: 0;
+}
+.nft-listing-split-sidebar .accordion__panel {
+  padding: 0;
+}
+.nft-listing-split-sidebar .accordion__panel ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+.nft-listing-split-sidebar .accordion__item + .accordion__item {
+  border-top: 1px solid var(--hoverBg);
+  padding-top: 20px;
+}
+.d-flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn {
+  background: #fff;
+  border-radius: 8px;
+  color: #000;
+  cursor: pointer;
+  border: 1px solid #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 25px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.profile-btn-img {
+  overflow: hidden;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.profile-side-menu {
+  position: fixed;
+  background: #121619;
+  right: 0;
+  height: 100vh;
+  top: 0;
+  overflow: auto;
+  min-width: 300px;
+  z-index: 9999;
+}
+
+.profile-side-menu > svg {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 20px;
+  height: auto;
+  cursor: pointer;
+}
+
+.profile-side-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.profile-side-menu-header strong {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.profile-side-menu-header strong span {
+  border-radius: 50%;
+}
+
+ul.profile-side-list li {
+}
+
+ul.profile-side-list li a {
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  background: #343a3f;
+  padding: 10px 20px;
+  border-bottom: 1px solid #121619;
+  display: block;
+}
+
+.profile-side-card {
+  border: 1px solid #272d31;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+.profile-side-card-header {
+  border-bottom: 1px solid #272d31;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.profile-side-card-header span {
+  font-size: 12px;
+  font-weight: 400;
+  color: #878e97;
+  padding: 8px;
+}
+
+.profile-side-card-header strong {
+  background: #343a3f;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.profile-side-card ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 5px;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.profile-side-card ul li span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-side-card ul li span svg {
+  width: 25px;
+  height: auto;
+}
+
+.profile-side-card ul {
+  padding: 12px 10px;
+}
+
+.profile-side-card button {
+  display: block;
+  text-align: right;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-top: 1px solid #272d31;
+  padding: 15px;
+  color: #46e370;
+  cursor: pointer;
+}
+.profile-side-card button:hover {
+  background: #1a1f22;
+}
+.discount-btn {
+  border: 1px solid #4d5358;
+  display: block;
+  margin: 20px;
+  text-align: center;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.discount-btn:hover {
+  background: #1a1f22;
+}
+ul.profile-side-list li a:hover {
+  background: #1a1f22;
+}
+.rox-info-over {
+  position: relative;
+  display: inline-block;
+}
+
+.rox-info-over span {
+  position: absolute;
+  right: 26px;
+  background: #373737;
+  width: 250px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  top: 0%;
+  font-weight: 400;
+  display: none;
+  color: #fff;
+}
+.rox-info-over svg {
+  margin: 5px;
+}
+.rox-info-over:hover span {
+  display: block;
+}
+.rox-info-over span h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.rox-info-over span a {
+  display: block;
+  margin-top: 10px;
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 600;
+  font-size: 12px;
+}
+@media screen and (max-width: 991px) {
+  .info-page h1 {
+    font-size: 40px;
+  }
+  .betting-area span.hoursTimes {
+    position: unset !important;
+    text-align: center;
+    margin: auto;
+  }
+  ul.react-tabs__tab-list {
+    grid-template-columns: unset !important;
+  }
+  .genesis-tab .react-tabs__tab-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 0px;
+  }
+}
+.custom-dropdown > .Dropdown-control {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border: 1px solid #f7f7f7;
+}
+.selectbgdark > .Dropdown-control {
+  background: #1f2128;
+  color: #fff;
+}
+.selectbgdark > .Dropdown-menu {
+  background: #1f2128;
+}
+.selectbgdark > .Dropdown-menu > .Dropdown-option {
+  color: #fff;
+}
+.selectbgdark > .Dropdown-menu > .Dropdown-option:hover {
+  color: #1f2128;
+}
+.selectbgdark > .Dropdown-menu > .Dropdown-option.is-selected {
+  color: #1f2128;
+}
+
+.lg-img-wrap {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.connect-btn {
+  background: #237b45;
+  color: #fff;
+}
+
+.get-start-h6 div:nth-child(1) {
+  height: 100%;
+}
+.get-start-h6 h6 {
+  display: none;
+}
+.get-start-h6 a {
+  width: 100%;
+  height: 100%;
+}
+
+.drop-down > .Dropdown-control {
+  border: 1px solid #808080 !important;
+}
+
+.each-slide-effect > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  height: 350px;
+}
+
+.each-slide-effect span {
+  padding: 20px;
+  font-size: 20px;
+  background: #efefef;
+  text-align: center;
+}
+
+.betting-one .react-tabs__tab.react-tabs__tab--selected {
+  background: #38761d;
+  border: 1px solid #295716;
+}
+
+.betting-one .react-tabs__tab {
+  background: #525252;
+  border: 1px solid #222222;
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 40px;
+  border-radius: 0;
+}
+ul.react-tabs__tab-list {
+  border: none;
+  margin: 0;
+}
+
+.react-tabs__tab:focus:after {
+  display: none;
+}
+ul.react-tabs__tab-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.betting-footer .react-tabs__tab-list {
+  border-bottom: 2px solid #38761d !important;
+  padding-bottom: 1px;
+}
+
+.betting-area .accordion__button {
+  padding: 10px;
+  background: #f4f4f4 !important;
+  color: #000 !important;
+  margin: 0 !important;
+}
+.betting-area .accordion__panel {
+  padding: 0;
+}
+.betting-area .accordion .accordion__item:nth-child(odd) .accordion__button {
+  background: #e6e6e6 !important;
+}
+.betting-area span.hoursTimes {
+  position: absolute;
+  right: 20px;
+  background: #000;
+  border: 1px solid #fff;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  font-weight: 700;
+  top: 20px;
+}
+
+.betting-two-img .hoursTimes {
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  width: 80px;
+  height: 80px;
+  font-size: 24px;
+}
+.betting-three-tabs .react-tabs__tab.react-tabs__tab--selected {
+  background: #ff0a00;
+  color: #fff;
+  border-radius: 0;
+}
+
+.betting-three-tabs .react-tabs__tab {
+  background: #828282;
+  border: 1px solid #000;
+  padding: 12px 14px;
+  font-weight: 700;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+}
+
+.betting-three-tabs ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+.main svg path.link {
+  fill: none;
+  stroke: var(--colorWhite);
+  stroke-width: 1.5px;
+}
+.main svg g.node text {
+  fill: var(--colorWhite);
+  color: var(--colorWhite);
+  /* stroke:var(--colorWhite); */
+}

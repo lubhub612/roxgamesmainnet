@@ -1,0 +1,39 @@
+<svg fill="none" height="22" viewBox="0 0 22 22" width="22" xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <filter id="a" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="17.6" width="17.6" x="2" y="2">
+    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+    <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape"></feBlend>
+    <feColorMatrix in="SourceAlpha" result="hardAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0">
+    </feColorMatrix>
+    <feOffset></feOffset>
+    <feGaussianBlur stdDeviation="1.5"></feGaussianBlur>
+    <feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"></feComposite>
+    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"></feColorMatrix>
+    <feBlend in2="shape" mode="normal" result="effect1_innerShadow_432:1005"></feBlend>
+  </filter>
+  <radialGradient id="b" cx="0" cy="0"
+    gradientTransform="matrix(-21.59999084 -21.59999084 21.59999084 -21.59999084 21.6 21.6)"
+    gradientUnits="userSpaceOnUse" r="1">
+    <stop offset="0" stop-color="#aebacb"></stop>
+    <stop offset="1" stop-color="#2a3b54"></stop>
+  </radialGradient>
+  <radialGradient id="c" cx="0" cy="0"
+    gradientTransform="matrix(7.4250077 9.78751244 -9.8423248 7.46658948 6.58125 3.20625)"
+    gradientUnits="userSpaceOnUse" r="1">
+    <stop offset="0" stop-color="#fff" stop-opacity=".8"></stop>
+    <stop offset="1" stop-color="#fff" stop-opacity="0"></stop>
+  </radialGradient>
+  <g filter="url(#a)">
+    <path
+      d="m10.8 2c-4.86011 0-8.8 3.93989-8.8 8.8 0 4.8601 3.93989 8.8 8.8 8.8 2.3339 0 4.5722-.9271 6.2225-2.5775 1.6504-1.6503 2.5775-3.8886 2.5775-6.2225 0-4.86011-3.9399-8.8-8.8-8.8z"
+      fill="#DE6FA1"></path>
+  </g>
+  <g clip-rule="evenodd" fill-rule="evenodd">
+    <path
+      d="m0 10.8c0-5.96468 4.83532-10.8 10.8-10.8 5.9647 0 10.8 4.83532 10.8 10.8 0 2.8643-1.1379 5.6114-3.1632 7.6368-2.0254 2.0253-4.7725 3.1632-7.6368 3.1632-5.96468 0-10.8-4.8353-10.8-10.8zm2 0c0-4.86011 3.93989-8.8 8.8-8.8 4.8601 0 8.8 3.93989 8.8 8.8 0 2.3339-.9271 4.5722-2.5775 6.2225-1.6503 1.6504-3.8886 2.5775-6.2225 2.5775-4.86011 0-8.8-3.9399-8.8-8.8z"
+      fill="url(#b)"></path>
+    <path
+      d="m0 10.8c0-5.96468 4.83532-10.8 10.8-10.8 5.9647 0 10.8 4.83532 10.8 10.8 0 2.8643-1.1379 5.6114-3.1632 7.6368-2.0254 2.0253-4.7725 3.1632-7.6368 3.1632-5.96468 0-10.8-4.8353-10.8-10.8zm2 0c0-4.86011 3.93989-8.8 8.8-8.8 4.8601 0 8.8 3.93989 8.8 8.8 0 2.3339-.9271 4.5722-2.5775 6.2225-1.6503 1.6504-3.8886 2.5775-6.2225 2.5775-4.86011 0-8.8-3.9399-8.8-8.8z"
+      fill="url(#c)" fill-opacity=".5"></path>
+  </g>
+</svg>
